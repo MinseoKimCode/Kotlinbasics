@@ -1,6 +1,7 @@
 package com.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,11 +29,26 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        // ✅ 함수 호출은 반드시 onCreate 안에서 실행
         // week02Variables()
         // week02Functions()
-        week03Classes()
+        // week03Classes()
+        week03Collections()
     }
+}
+
+private fun week03Collections(){
+    Log.d("KotlinWeek03","===== Kotlin Collections =====")
+
+    val fruits = listOf("apple","banana","orange")
+    // fruits.add("kiwi")
+
+    Log.d("KotlinWeek03","Fruits : $fruits")
+
+    for(fruit in fruits){
+        Log.d("KotlinWeek03","Fruits : $fruit")
+    }
+
+
 }
 
 private fun week03Classes() {
