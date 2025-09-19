@@ -40,14 +40,24 @@ private fun week03Collections(){
     Log.d("KotlinWeek03","===== Kotlin Collections =====")
 
     val fruits = listOf("apple","banana","orange")
+    val mutableFruits = mutableListOf("kiwi","watermelon")
     // fruits.add("kiwi")
 
     Log.d("KotlinWeek03","Fruits : $fruits")
+    Log.d("KotlinWeek03","Fruits : $mutableFruits")
+
+    val scores = mapOf("kim" to 97, "Park" to 100 , "Lee" to 99)
+    Log.d("KotlinWeek03","Fruits : $scores")
+
 
     for(fruit in fruits){
         Log.d("KotlinWeek03","Fruits : $fruit")
     }
+    for(fruit in mutableFruits){
+        Log.d("KotlinWeek03","Fruits : $fruit")
+    }
 
+    scores.forEach{(name, score) -> Log.d("KotlinWeek03","$name scored $score")}
 
 }
 
