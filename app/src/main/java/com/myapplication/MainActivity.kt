@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 
         // week02Variables()
         // week02Functions()
-        // week03Classes()
+        week03Classes()
         week03Collections()
     }
 }
@@ -64,7 +64,37 @@ private fun week03Collections(){
 private fun week03Classes() {
     println("===== Kotlin Classes =====")
 
-    class Student {
+    class Person(val name:String , var age: Int){
+        fun introduce(){
+        Log.d("KotlinWeek03","안녕하세요, $name ($age 세) 입니다.")
+    }
+        fun birthday(){
+        age++
+            Log.d("KotlinWeek03","안녕하세요, $name 의 생일 이제 $age 세")
+        }
+    }
+    val person1 = Person("홍길동",31)
+    person1.introduce()
+    person1.birthday()
+
+    class Animal(var species : String){
+        var weight : Double = 0.0
+        constructor(species: String, weight: Double) : this(species){
+            this.weight = weight
+            Log.d("KotlinWeek03","$species 의 무게 이제 $weight kg")
+        }
+
+        fun makeSound(){
+            Log.d("KotlinWeek03","$species 가 소리를 냅니다")
+        }
+
+    }
+    val puppy = Animal("강아지",6.5)
+    puppy.makeSound();
+}
+
+
+    /*class Student {
         var name: String = ""
         var age: Int = 0
 
@@ -120,7 +150,7 @@ private fun week02Variables() {
     val isStudent: Boolean = true
 
     println("Age : $age, Height : $height, isStudent : $isStudent")
-}
+}*/
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
