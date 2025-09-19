@@ -27,51 +27,71 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        wee02Variables()
+
+        // ✅ 함수 호출은 반드시 onCreate 안에서 실행
+        // week02Variables()
+        // week02Functions()
+        week03Classes()
     }
 }
 
-fun week02Functions() {
-    println("week02 Functions")
+private fun week03Classes() {
+    println("===== Kotlin Classes =====")
 
-    // fun greet(name : String) = "hello $name!"
-    fun greet(name : String): String{
+    class Student {
+        var name: String = ""
+        var age: Int = 0
+
+        fun introduce() {
+            println("Hi I'm $name and I'm $age years old")
+        }
+    }
+
+    val student = Student()
+    student.name = "Choi"
+    student.age = 24
+    student.introduce()
+
+    data class Person(val name: String, val age: Int)
+
+    val person1 = Person("Lee", 24)
+    val person2 = Person("Lee", 24)
+
+    println("person1 : $person1")
+    println("Equal?: ${person1 == person2}")
+}
+
+private fun week02Functions() {
+    println("===== Week02 Functions =====")
+
+    fun greet(name: String): String {
         return "hello $name!"
     }
 
-    fun add(a : Int , b : Int) = a + b
+    fun add(a: Int, b: Int) = a + b
 
-    fun introduce(name: String , age: Int = 19){
+    fun introduce(name: String, age: Int = 19) {
         println("my name is $name and I'm $age years old")
     }
 
     println(greet("Kotlin"))
-    println("Sum : ${add(5,-71)}")
+    println("Sum : ${add(5, -71)}")
     introduce("Park")
-    introduce("Kim",29)
+    introduce("Kim", 29)
 
     println(greet("Android Developer"))
 }
 
-fun wee02Variables() {
-    println("Week02 Variables")
-/*
-    val courseName = "Mobile Programming" // 상수
+private fun week02Variables() {
+    println("===== Week02 Variables =====")
 
-    var week = 1
-    week = 2
-
-    println("Course : $courseName")
-    println("Course : $week")
-*/
-    val name : String = "Android"
-    var version : Double = 8.1
+    val name: String = "Android"
+    var version: Double = 8.1
     println("Hello $name $version")
 
-
     val age: Int = 24
-    val height : Double = 173.3
-    val isStudent : Boolean = true
+    val height: Double = 173.3
+    val isStudent: Boolean = true
 
     println("Age : $age, Height : $height, isStudent : $isStudent")
 }
